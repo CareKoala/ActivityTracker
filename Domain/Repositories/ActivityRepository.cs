@@ -1,11 +1,13 @@
-﻿namespace Domain.Repositories
+﻿using Domain.Classes;
+
+namespace Domain.Repositories
 {
 	public class ActivityRepository
 	{
-		public int Create(ActivityCreateModel activityCreateModel)
+		public Activity Create(string name, Category category)
 		{
 			//Create entity in db from Model and return id;
-			return 1;
+			return new Activity(name, category);
 		}
 	}
 }

@@ -1,21 +1,29 @@
-﻿using Domain.Repositories;
+﻿using Domain.Classes;
+using Domain.Repositories;
 using Service.Interfaces;
 
 namespace Service
 {
 	public class ActivityService : IService
 	{
-		private readonly ActivityRepository _repository;
+		private readonly ActivityRepository _activityRepository;
+		private readonly CategoryRepository _categoryRepository;
+
 
 		public ActivityService()
 		{
-			_repository = new ActivityRepository();
+			_activityRepository = new ActivityRepository();
+			_categoryRepository = new CategoryRepository();
 		}
 
-		public void Create(string name, int categoryId)
+		public ActivityCreateModel Create(string name, int categoryId)
 		{
-			ActivityCreateModel model = new(name, categoryId);
-			_repository.Create();
+			Category category = _categoryRepository.Get(categoryId);
+			Activity activity = _activityRepository.Create(name, category);
+
+			ActivityCreateModel model = new(activity.Name, category);
+
+			return model;
 		}
 
 		public void Delete(int id)
