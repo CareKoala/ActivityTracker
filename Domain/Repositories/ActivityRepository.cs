@@ -1,7 +1,11 @@
 ﻿namespace Domain.Repositories
 {
-	internal class ActivityRepository
+	public class ActivityRepository
 	{
-		public void Create(A)
+		public int Create(ActivityCreateModel activityCreateModel)
+		{
+			//Create entity in db from Model and return id;
+			return 1;
+		}
 	}
 }

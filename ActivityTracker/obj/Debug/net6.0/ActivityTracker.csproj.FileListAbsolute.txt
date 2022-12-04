@@ -1,0 +1,7 @@
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.csproj.AssemblyReference.cache
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.AssemblyInfoInputs.cache
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.AssemblyInfo.cs
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.csproj.CoreCompileInputs.cache
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lasse\source\repos\ActivityTracker\ActivityTracker\obj\Debug\net6.0\ActivityTracker.MvcApplicationPartsAssemblyInfo.cache
