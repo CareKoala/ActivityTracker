@@ -2,7 +2,7 @@
 
 namespace Domain.Repositories
 {
-	public class ActivityRepository
+	public class ActivityRepository : IActivityRepository
 	{
 		public Activity Create(string name, Category category)
 		{

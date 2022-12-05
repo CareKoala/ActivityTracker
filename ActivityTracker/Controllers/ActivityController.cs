@@ -1,6 +1,6 @@
 using ActivityTracker.Models.Activity;
 using Microsoft.AspNetCore.Mvc;
-using Service;
+using Service.Interfaces;
 
 namespace ActivityTracker.Controllers
 {
@@ -8,26 +8,26 @@ namespace ActivityTracker.Controllers
 	[Route("[controller]")]
 	public class ActivityController : ControllerBase
 	{
-		private readonly ActivityService _activityService;
+		private readonly IActivityService _activityService;
 
-		public ActivityController(ActivityService activityService)
+		public ActivityController(IActivityService activityService)
 		{
 			_activityService = activityService;
 		}
 
 		[HttpPost(Name = "Create")]
-		public CreateOutput Create(CreateInput input)
+		public CreateActivityOutput Create(CreateActivityInput input)
 		{
 			ValidateCreate(input);
 
 			_activityService.Create(input.Name, input.CategoryId);
 
-			CreateOutput output = new();
+			CreateActivityOutput output = new();
 
 			return output;
 		}
 
-		private void ValidateCreate(CreateInput input)
+		private void ValidateCreate(CreateActivityInput input)
 		{
 			if (input == null)
 			{

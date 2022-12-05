@@ -1,6 +1,6 @@
 ﻿namespace ActivityTracker.Models.Activity
 {
-	public class CreateOutput: BaseOutput
+	public class CreateActivityOutput: BaseOutput
 	{
 		/// <summary>
 		/// The Id of the activity just created.
