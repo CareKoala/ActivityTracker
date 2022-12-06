@@ -25,7 +25,7 @@ namespace Service
 
 			CategoryModel categoryModel = new(category);
 
-			ActivityCreateModel model = new(activity.Name, categoryModel);
+			ActivityCreateModel model = new(activity.Id, activity.Name, categoryModel);
 
 			return model;
 		}
@@ -35,10 +35,9 @@ namespace Service
 			throw new NotImplementedException();
 		}
 
-
 		public void Read(int id)
 		{
 			throw new NotImplementedException();
-		}
+		}		
 	}
 }

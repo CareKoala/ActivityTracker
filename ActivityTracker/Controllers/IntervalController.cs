@@ -1,6 +1,8 @@
 using ActivityTracker.Models.Activity;
+using ActivityTracker.Models.Interval;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
+using Service.Models;
 
 namespace ActivityTracker.Controllers
 {
@@ -27,9 +29,54 @@ namespace ActivityTracker.Controllers
 		{
 			ValidateCreateInput(input);
 
-			_intervalService.Create();
+			bool isThereAnIntervalActive = _intervalService.IsIntervalActiveOnActivity(input.ActivityId);
 
-			CreateIntervalOutput output = new();
+			CreateIntervalOutput output;
+
+			if (!isThereAnIntervalActive)
+			{
+				IntervalModel intervalModel = _intervalService.Create(input.ActivityId);
+
+				//This should be moved to a private method instead of being dublicated here.
+				output = new CreateIntervalOutput
+				{
+					Id = intervalModel.Id,
+					IntervalStartInstant = intervalModel.IntervalStartInstant.ToString("G"),
+					StatusMessage = Models.Activity.ResponseStatus.Success.ToString()
+				};
+			}
+			else
+			{
+				output = new CreateIntervalOutput
+				{
+					StatusMessage = Models.Activity.ResponseStatus.Error.ToString(),
+					ErrorMessage = "There is already an interval active for activity. Please stop interval to initiate a new one."
+				};
+			}
+
+			return output;
+		}
+
+		[HttpPost]
+		[Route("Update")]
+		public UpdateIntervalOutput Update(UpdateIntervalInput input)
+		{
+			UpdateIntervalOutput output = new();
+
+			bool isIntervalAvailableToUpdate = _intervalService.IsIntervalActiveOnActivity(input.ActivityId);
+
+			if (isIntervalAvailableToUpdate)
+			{
+				_intervalService.EndInterval(input.Id, input.ActivityId, input.Description);
+
+				output.StatusMessage = Models.Activity.ResponseStatus.Success.ToString();
+			} else
+			{
+				output.StatusMessage = Models.Activity.ResponseStatus.Error.ToString();
+				output.ErrorMessage = "There is no interval active on the activity.";
+			}
+
+			
 
 			return output;
 		}
@@ -39,11 +86,6 @@ namespace ActivityTracker.Controllers
 			if (input == null)
 			{
 				throw new ArgumentNullException("input");
-			}
-
-			if (input.Name == null)
-			{
-				throw new ArgumentNullException("name");
 			}
 		}
 	}

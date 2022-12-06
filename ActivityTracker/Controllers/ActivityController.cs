@@ -1,6 +1,7 @@
 using ActivityTracker.Models.Activity;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
+using Service.Models.Activity;
 
 namespace ActivityTracker.Controllers
 {
@@ -23,27 +24,22 @@ namespace ActivityTracker.Controllers
 		/// <returns></returns>
 		[HttpPost]
 		[Route("Create")]
-		public CreateIntervalOutput Create(CreateIntervalInput input)
+		public CreateActivityOutput Create(CreateActivityInput input)
 		{
 			ValidateCreateInput(input);
 
-			_activityService.Create(input.Name, input.CategoryId);
+			ActivityCreateModel acvitityCreateModel = _activityService.Create(input.Name, input.CategoryId);
 
-			CreateIntervalOutput output = new();
+			CreateActivityOutput output = new(acvitityCreateModel.Id, acvitityCreateModel.CategoryDescription, ResponseStatus.Success, errorMessage: null);
 
 			return output;
 		}
 
-		private void ValidateCreateInput(CreateIntervalInput input)
+		private void ValidateCreateInput(CreateActivityInput input)
 		{
 			if (input == null)
 			{
 				throw new ArgumentNullException("input");
-			}
-
-			if (input.Name == null)
-			{
-				throw new ArgumentNullException("name");
 			}
 		}
 	}

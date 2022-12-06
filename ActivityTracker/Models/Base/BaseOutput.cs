@@ -1,11 +1,9 @@
 ﻿namespace ActivityTracker.Models.Activity
 {
+	//The desire for this call was to have a common place to has status/exception handling.
 	public abstract class BaseOutput
 	{
-		/// <summary>
-		/// Status that defines if the action invokes went as planned or not.
-		/// </summary>
-		public ResponseStatus Status { get; set; }
+		public string StatusMessage { get; set; } = string.Empty;
 
 		/// <summary>
 		/// Error message if some error occours during the action invoked.

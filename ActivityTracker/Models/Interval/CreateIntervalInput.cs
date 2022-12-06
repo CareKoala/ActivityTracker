@@ -1,8 +1,10 @@
-﻿namespace ActivityTracker.Models.Interval
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ActivityTracker.Models.Interval
 {
 	public class CreateIntervalInput
 	{
-		public string Name { get; set; } = string.Empty;
-		public int CategoryId { get; set; } = 0;
+		[Required]
+		public int ActivityId { get; set; }
 	}
 }

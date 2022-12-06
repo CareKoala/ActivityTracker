@@ -21,5 +21,11 @@ namespace Domain.Repositories
 
 			return activity;
 		}
+
+		public Activity Read(int activityId)
+		{
+			return _activities.FirstOrDefault(activity => activity.Id == activityId);
+				
+		}
 	}
 }

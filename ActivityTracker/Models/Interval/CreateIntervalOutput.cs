@@ -7,6 +7,8 @@ namespace ActivityTracker.Models.Interval
 		/// <summary>
 		/// The Id of the activity just created.
 		/// </summary>
-		public int Id { get; set; }
+		public int? Id { get; set; }
+
+		public string? IntervalStartInstant { get; set; }
 	}
 }
