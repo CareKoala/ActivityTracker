@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lasse\\source\\repos\\ActivityTracker\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\lasse\\Documents\\GitHub\\ActivityTracker\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\lasse\\source\\repos\\ActivityTracker\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\lasse\\Documents\\GitHub\\ActivityTracker\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\lasse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lasse\\source\\repos\\ActivityTracker\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\lasse\\Documents\\GitHub\\ActivityTracker\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lasse\\AppData\\Roaming\\NuGet\\NuGet.Config",

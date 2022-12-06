@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "htOElcXWyWkv7SkP1Ihb7arVBa/sslK19eZ8mkriFhNrRLhHfNKeca4Zel6pMof6MG5Geekvd0igIFvwEryVNA==",
+  "dgSpecHash": "3JDeZK7PIhrQRstPZVphZJB/PpZwuyO+1N5/HliTGvNgjEP04HsHOBPH0g95SD6jGQ2aawUbNphtvlUyKVdMvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lasse\\source\\repos\\ActivityTracker\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\lasse\\Documents\\GitHub\\ActivityTracker\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nIeSghJqvXIYHrO/YZir6G883OAZRDmDegX05NAmcXGh9yeUKb/XSjah1kqkSghD7iPQztb+El8TRTgU3eZttQ==",
+  "dgSpecHash": "+5/TCCU/7YKKFjGCEqqf9ouAN8gIBvsgTiz7i8bEfWWKcUN1+R2PTDSIMGNzvYkW8Tr3J6fJDwBJuuEGSKydcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lasse\\source\\repos\\ActivityTracker\\ActivityTracker\\ActivityTracker.csproj",
+  "projectFilePath": "C:\\Users\\lasse\\Documents\\GitHub\\ActivityTracker\\ActivityTracker\\ActivityTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lasse\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\lasse\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
