@@ -1,8 +1,9 @@
 ﻿using Domain.Classes;
+using Domain.Repositories;
 
 namespace Service
 {
-	public class CategoryRepository
+	public class CategoryRepository : ICategoryRepository
 	{
 		ICollection<Category> _categories;
 
@@ -12,23 +13,24 @@ namespace Service
 			PopuleteCategories();
 		}
 
-		public Category Create(int id, string description)
+		public Category Create(string description)
 		{
-			Category category = new(id, description);
+			Category category = new(description);
 
 			return category;
 		}
 
-		public Category Get(int categoryId)
+		public Category Read(int categoryId)
 		{
 			return _categories.Where(cat => cat.Id == categoryId).FirstOrDefault() ?? throw new Exception($"No category found with Id: {categoryId}");
 		}
 
 		private void PopuleteCategories()
 		{
-			_categories.Add(new Category(1, "Arbejde"));
-			_categories.Add(new Category(2, "Fritid"));
-			_categories.Add(new Category(3, "Familie"));
+			//Id not part of the constructor in real application, so manually added here as a hack to compensate for lack of persitence.
+			_categories.Add(new Category("Arbejde") { Id = 1 });
+			_categories.Add(new Category("Fritid") { Id = 2 });
+			_categories.Add(new Category("Familie") { Id = 3 });
 		}
 	}
 }

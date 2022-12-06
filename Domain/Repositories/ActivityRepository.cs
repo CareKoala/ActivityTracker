@@ -4,10 +4,22 @@ namespace Domain.Repositories
 {
 	public class ActivityRepository : IActivityRepository
 	{
+		private readonly ICollection<Activity> _activities;
+
+		public ActivityRepository()
+		{
+			_activities = new List<Activity>();
+		}
+
 		public Activity Create(string name, Category category)
 		{
-			//Create entity in db from Model and return id;
-			return new Activity(name, category);
+			Activity activity = new Activity(name, category);
+			
+			//Simple hack to simulate DB id.
+			activity.Id = _activities.Count + 1;
+			_activities.Add(activity);
+
+			return activity;
 		}
 	}
 }

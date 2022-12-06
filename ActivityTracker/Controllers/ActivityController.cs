@@ -15,10 +15,17 @@ namespace ActivityTracker.Controllers
 			_activityService = activityService;
 		}
 
-		[HttpPost(Name = "Create")]
+		/// <summary>
+		/// Create a new activity to allow adding intervals to keep track on the entire timeusage of the activity.
+		/// Activity requires a category.
+		/// </summary>
+		/// <param name="input"></param>
+		/// <returns></returns>
+		[HttpPost]
+		[Route("Create")]
 		public CreateActivityOutput Create(CreateActivityInput input)
 		{
-			ValidateCreate(input);
+			ValidateCreateInput(input);
 
 			_activityService.Create(input.Name, input.CategoryId);
 
@@ -27,7 +34,7 @@ namespace ActivityTracker.Controllers
 			return output;
 		}
 
-		private void ValidateCreate(CreateActivityInput input)
+		private void ValidateCreateInput(CreateActivityInput input)
 		{
 			if (input == null)
 			{
