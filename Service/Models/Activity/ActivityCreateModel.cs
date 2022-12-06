@@ -1,6 +1,4 @@
-﻿using Domain.Classes;
-
-namespace Domain.Repositories
+﻿namespace Service.Models.Activity
 {
 	public class ActivityCreateModel
 	{
@@ -9,7 +7,7 @@ namespace Domain.Repositories
 		public string CategoryDescription { get; set; } = string.Empty;
 
 
-		public ActivityCreateModel(string name, Category category)
+		public ActivityCreateModel(string name, CategoryModel category)
 		{
 			Name = name;
 			CategoryId = category.Id;

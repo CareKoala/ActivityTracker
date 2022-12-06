@@ -5,7 +5,7 @@ namespace Service
 {
 	public class CategoryRepository : ICategoryRepository
 	{
-		ICollection<Category> _categories;
+		private readonly ICollection<Category> _categories;
 
 		public CategoryRepository()
 		{
@@ -28,9 +28,8 @@ namespace Service
 		private void PopuleteCategories()
 		{
 			//Id not part of the constructor in real application, so manually added here as a hack to compensate for lack of persitence.
-			_categories.Add(new Category("Arbejde") { Id = 1 });
-			_categories.Add(new Category("Fritid") { Id = 2 });
-			_categories.Add(new Category("Familie") { Id = 3 });
+			_categories.Add(new Category("Fritid") { Id = 1 });
+			_categories.Add(new Category("Pligter") { Id = 2 });
 		}
 	}
 }

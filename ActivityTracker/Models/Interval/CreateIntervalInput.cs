@@ -1,4 +1,4 @@
-﻿namespace ActivityTracker.Models.Activity
+﻿namespace ActivityTracker.Models.Interval
 {
 	public class CreateIntervalInput
 	{

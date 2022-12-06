@@ -6,13 +6,13 @@ namespace ActivityTracker.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
-	public class ActivityController : ControllerBase
+	public class IntervalController : ControllerBase
 	{
-		private readonly IActivityService _activityService;
+		private readonly IIntervalService _intervalService;
 
-		public ActivityController(IActivityService activityService)
+		public IntervalController(IIntervalService intervalService)
 		{
-			_activityService = activityService;
+			_intervalService = intervalService;
 		}
 
 		/// <summary>
@@ -27,7 +27,7 @@ namespace ActivityTracker.Controllers
 		{
 			ValidateCreateInput(input);
 
-			_activityService.Create(input.Name, input.CategoryId);
+			_intervalService.Create();
 
 			CreateIntervalOutput output = new();
 

@@ -1,6 +1,8 @@
 ﻿using Domain.Classes;
 using Domain.Repositories;
 using Service.Interfaces;
+using Service.Models;
+using Service.Models.Activity;
 using Service.Services;
 
 namespace Service
@@ -16,12 +18,16 @@ namespace Service
 			_categoryService = categoryService;
 		}
 
-		public void Create(string name, int categoryId)
+		public ActivityCreateModel Create(string name, int categoryId)
 		{
 			Category category = _categoryService.Read(categoryId);
 			Activity activity = _activityRepository.Create(name, category);
 
-			ActivityCreateModel model = new(activity.Name, category);
+			CategoryModel categoryModel = new(category);
+
+			ActivityCreateModel model = new(activity.Name, categoryModel);
+
+			return model;
 		}
 
 		public void Delete(int id)
