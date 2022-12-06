@@ -73,7 +73,7 @@ namespace ActivityTracker.Controllers
 			} else
 			{
 				output.StatusMessage = Models.Activity.ResponseStatus.Error.ToString();
-				output.ErrorMessage = "There is no interval active on the activity.";
+				output.ErrorMessage = "There is no interval active on the activity. Add a new interval before trying to end one.";
 			}
 
 			
